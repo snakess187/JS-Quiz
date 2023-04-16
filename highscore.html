@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <h1>High Scores</h1>
+    <table id="scoreTable">
+        <tr>
+          <th>Initials</th>
+          <th>Score</th>
+        </tr>
+    </table>
+         
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+function displayHighScores() {
+  const highScores = JSON.parse(localStorage.getItem('highScores')) || [];
+  const scoreTable = document.getElementById('scoreTable');
+
+  // Clear the table body before adding new scores
+  scoreTable.innerHTML = '<tr><th>Initials</th><th>Score</th></tr>';
+
+  // Loop through the high scores and add them to the table
+  for (let i = 0; i < highScores.length; i++) {
+    const initials = highScores[i].initials;
+    const score = highScores[i].score;
+
+    const row = scoreTable.insertRow(i + 1);
+    const initialsCell = row.insertCell(0);
+    const scoreCell = row.insertCell(1);
+
+    initialsCell.innerHTML = initials;
+    scoreCell.innerHTML = score;
+  }
+}
+
+displayHighScores();
+</script>
+</body>
+</html>

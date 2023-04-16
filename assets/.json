@@ -1,0 +1,17 @@
+{
+    "highScores": [
+      {
+        "initials": "ABC",
+        "score": 10
+      },
+      {
+        "initials": "DEF",
+        "score": 8
+      },
+      {
+        "initials": "GHI",
+        "score": 5
+      }
+    ]
+  }
+  
